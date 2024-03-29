@@ -1,6 +1,6 @@
 FROM python:3.11.4-slim-bullseye
 
-WORKDIR /getGrass
+WORKDIR /getGrassWebUI
 
 COPY requirements.txt requirements.txt
 
