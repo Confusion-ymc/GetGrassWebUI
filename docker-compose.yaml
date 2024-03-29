@@ -6,6 +6,6 @@ services:
       context: .
     restart: always
     container_name: get_grass
-    network_mode: host
+    network_mode: bridge
     ports:
       - "8000:8000"
