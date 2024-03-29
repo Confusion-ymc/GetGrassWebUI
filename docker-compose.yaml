@@ -7,3 +7,5 @@ services:
     restart: always
     container_name: get_grass
     network_mode: host
+    ports:
+      - "8000:8000"
