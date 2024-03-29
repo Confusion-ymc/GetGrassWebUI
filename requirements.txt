@@ -6,4 +6,4 @@ websockets==12.0
 Faker==23.2.1
 loguru==0.7.2
 starlette==0.36.3
-python-socks==2.4.4
+PySocks=1.7.1
