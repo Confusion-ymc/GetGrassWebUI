@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+  get_grass:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    container_name: get_grass
+    network_mode: host

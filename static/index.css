@@ -1,0 +1,86 @@
+body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+button{
+    max-height:35px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.status-0 {
+    color: red;
+}
+
+.status-1 {
+    color: orange;
+}
+
+.status-2 {
+    color: green;
+}
+
+.status-3 {
+    color: blue;
+}
+
+    /* CSS styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

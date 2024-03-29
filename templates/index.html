@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <link rel="stylesheet" href="/static/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetGrass Web</title>
+</head>
+<body>
+<div class="title">
+    <h2>GetGrass Web - <span class='status-2' id="onlineCount">0</span>/<span id="allCount">20</span></h2>
+    <div>
+        <button onclick="deleteAllUser()">清空账号</button>
+        <button onclick="uploadFile()">上传文件</button>
+    </div>
+</div>
+<div id="logsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="logText"></p>
+    </div>
+</div>
+
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>UserID</th>
+            <th>代理</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data will be dynamically added here -->
+    </tbody>
+</table>
+<script src="/static/index.js"></script>
+</body>
+</html>
