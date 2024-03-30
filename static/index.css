@@ -24,9 +24,13 @@ table, th, td {
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
     border: 1px solid black;
+}
+
+td.proxy{
+    text-align: left;
 }
 
 th {

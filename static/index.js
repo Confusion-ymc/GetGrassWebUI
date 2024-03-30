@@ -20,6 +20,43 @@ function updateOnlineCount(onlineCount, allCount) {
     allCountElement.textContent = allCount;
 }
 
+// 弹出对话框输入 user_id 和 proxy
+function addUser() {
+    var userId = prompt("请输入UserID:");
+    if (!userId) {
+        return
+    }
+    var proxy = prompt("设置代理 (不使用代理点击取消)");
+    if (userId) {
+        // 构建带参数的 URL
+        var baseUrl = '/client/';
+        var url = new URL(baseUrl, window.location.href);
+        url.searchParams.append('user_id', userId);
+        if (proxy) {
+            url.searchParams.append('proxy_url', proxy);
+        }
+        fetch(url.href, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('账号添加成功');
+                fetchData();
+            } else {
+                alert('账号添加失败');
+            }
+        })
+        .catch(error => {
+            alert('请求错误:', error);
+        });
+    }
+}
+
+
+
 function deleteUser(userId) {
     fetch(`/client/${userId}`, {
         method: 'DELETE'
@@ -109,7 +146,7 @@ function fetchData() {
             row.innerHTML = `
                 <td>${counter+1}</td>
                 <td>${item.user_id}</td>
-                <td>${item.proxy_url || ''}</td>
+                <td class="proxy">${item.proxy_url || ''}</td>
                 <td class="status-${item.status}">${statusMap[item.status]}</td>
                 <td>
                     <button onclick="showLogs('${item.id}')">日志</button>

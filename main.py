@@ -95,7 +95,7 @@ def find_one(client_id: str):
             'data': {
                 'status': client.status,
                 "proxy_url": client.proxy_url,
-                "logs": reversed(client.logs[-50:])
+                "logs": list(reversed(client.logs[-50:]))
             },
             'message': "success"
         }
@@ -123,8 +123,9 @@ def find_all():
 
 @client_router.post("/")
 async def add(user_id: str, proxy_url: Optional[str] = None):
-    client = AsyncGrassWs(user_id=user_id, proxy_url=proxy_url)
+    client = AsyncGrassWs(user_id=user_id, proxy_url=proxy_url or None)
     client_id = add_client(client)
+    run_client(client_id)
     return {'data': client_id, 'message': 'create success'}
 
 
@@ -136,7 +137,8 @@ async def delete_one(user_id: str):
 
 @client_router.delete("/")
 async def delete_all():
-    for client_id in all_client_ids:
+    all_client_ids_copy = all_client_ids[::]
+    for client_id in all_client_ids_copy:
         await delete_client(client_id)
     return {'data': [], 'message': 'success'}
 
