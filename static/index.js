@@ -73,6 +73,7 @@ function deleteUser(userId) {
 }
 
 function deleteAllUser() {
+    showLoading();
     fetch(`/client/`, {
         method: 'DELETE'
     })
@@ -83,8 +84,12 @@ function deleteAllUser() {
             // If deletion is successful, reload all data
             fetchData();
         }
+        hideLoading();
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        hideLoading();
+    });
 }
 
 function uploadFile() {
@@ -94,7 +99,7 @@ function uploadFile() {
         const file = input.files[0];
         const formData = new FormData();
         formData.append('file', file);
-
+        showLoading();
         fetch('/upload/', {
             method: 'POST',
             body: formData
@@ -106,11 +111,14 @@ function uploadFile() {
             } else {
                 alert('File upload failed.');
             }
+            hideLoading();
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            hideLoading();
+        });
     };
     input.click();
-
 }
 
 // Function to close the modal
@@ -118,9 +126,6 @@ function closeModal() {
     document.getElementById('logsModal').style.display = 'none';
 }
 
-function fetchData() {
-
-}
 
 // 模拟数据请求的函数 fetchData，您需要根据实际情况替换为您的数据请求逻辑
 function fetchData() {
@@ -172,4 +177,14 @@ function fetchDataInterval(){
         setTimeout(fetchDataInterval, 5000);
     });
 }
+
+function showLoading() {
+    document.getElementById('loading').style.display = 'block';
+}
+
+function hideLoading() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+
 fetchDataInterval()
