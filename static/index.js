@@ -64,7 +64,7 @@ function deleteUser(userId) {
     .then(response => response.json())
     .then(data => {
         if (data.message === 'success') {
-            alert('User deleted successfully.');
+            alert('删除成功');
             // If deletion is successful, reload all data
             fetchData();
         }
@@ -80,7 +80,7 @@ function deleteAllUser() {
     .then(response => response.json())
     .then(data => {
         if (data.message === 'success') {
-            alert('User deleted successfully.');
+            alert('删除成功');
             // If deletion is successful, reload all data
             fetchData();
         }
@@ -106,10 +106,10 @@ function uploadFile() {
         })
         .then(response => {
             if (response.ok) {
-                alert('File uploaded successfully.');
+                alert('文件上传成功');
                 fetchData()
             } else {
-                alert('File upload failed.');
+                alert('文件上传失败！');
             }
             hideLoading();
         })

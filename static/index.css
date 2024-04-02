@@ -2,20 +2,26 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
+    background: black;
 }
 .title {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding: 10px;
+    color: white;
 }
 
 button{
-    max-height:35px
+    max-height:35px;
+    color: white;
+    background-color: black;
 }
 
 table {
     width: 100%;
+    color: white;
+    background: black;
     border-collapse: collapse;
 }
 
@@ -26,7 +32,7 @@ table, th, td {
 th, td {
     text-align: center;
     padding: 8px;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 td.proxy{
@@ -35,7 +41,7 @@ td.proxy{
 
 th {
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: black;
 }
 
 .status-0 {

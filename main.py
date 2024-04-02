@@ -86,7 +86,7 @@ def find_one(client_id: str):
         'data': {
             'status': None,
             "proxy_url": None,
-            "logs": None
+            "logs": []
         },
         'message': "failed"
     }
