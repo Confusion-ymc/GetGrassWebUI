@@ -2,13 +2,15 @@
 
 **This is a python tools for get grass score with multi accounts.**
 
+![img.png](img.png)
+
 ### **直接运行**
 1. ```pip3 install -r requirements.txt```
 2. ```python3 main.py```
 3. 浏览器访问`http://127.0.0.1:8000`
 4. 点击上传文件 上传编辑好的 `account.txt`
 
-### **Docker运行**
+### **Docker Compose 运行**
 1. `git clone https://github.com/Confusion-ymc/GetGrassWebUI.git`
 2. `docker compose up --build -d`
 3. 浏览器访问`http://{容器ip}:8000`
@@ -27,3 +29,4 @@
 5242367b-d366-1234-987a-9ebd303fa8f5
 5242367b-d366-1258-987a-9ebd303fa8f5==socks5://proxy.com:1080
  ```
+
