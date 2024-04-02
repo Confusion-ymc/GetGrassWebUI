@@ -9,18 +9,18 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     padding: 10px;
-    color: white;
+    color: #9799a1;
 }
 
 button{
     max-height:35px;
-    color: white;
+    color: #9799a1;
     background-color: black;
 }
 
 table {
     width: 100%;
-    color: white;
+    color: #9799a1;
     background: black;
     border-collapse: collapse;
 }
@@ -32,7 +32,7 @@ table, th, td {
 th, td {
     text-align: center;
     padding: 8px;
-    border: 1px solid white;
+    border: 1px solid #9799a1;
 }
 
 td.proxy{
@@ -74,7 +74,8 @@ th {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    color: #9799a1;
+    background-color: black;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -104,7 +105,7 @@ th {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: #9799a1;
     text-align: center;
     padding-top: 20%;
     z-index: 9999;
