@@ -37,7 +37,7 @@ class AsyncGrassWs:
         self.server_hostname = "proxy.wynd.network"
         self.server_port = 4444
         self.server_url = f"wss://{self.server_hostname}:{self.server_port}/"
-        self.proxy_timeout = 10
+        self.proxy_timeout = 60
 
         self.logs = []
 
