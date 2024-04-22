@@ -34,8 +34,10 @@ class AsyncGrassWs:
         self._stop = False
         self._stopped = False
         self._ping_stopped = False
-        self.server_url = "wss://proxy.wynd.network:4650/"
         self.server_hostname = "proxy.wynd.network"
+        self.server_port = 4444
+        self.server_url = f"wss://{self.server_hostname}:{self.server_port}/"
+
         self.logs = []
 
     def log(self, level, message):
@@ -94,7 +96,8 @@ class AsyncGrassWs:
                     ws_proxy = socks.socksocket()
                     ws_proxy.set_proxy(socks.PROXY_TYPES[proxy_type.upper()], http_proxy_host, http_proxy_port,
                                        username=username, password=password)
-                    await loop.run_in_executor(None, ws_proxy.connect, ("proxy.wynd.network", 4650))  # 执行阻塞函数
+                    ws_proxy.settimeout(10000)
+                    await loop.run_in_executor(None, ws_proxy.connect, (self.server_hostname, self.server_port))  # 执行阻塞函数
                     self.log(DEBUG, f'[连接代理成功] [{self.user_id}] [{self.proxy_url}]')
                 ssl_context = ssl.create_default_context()
                 ssl_context.check_hostname = False
